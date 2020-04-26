@@ -1,6 +1,6 @@
 {
   "name": "@tretuna/eslint-config",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Eslint configuration for TreTuna's JavaScript applications",
   "main": "index.js",
   "author": "Tre Ammatuna",
