@@ -1,0 +1,85 @@
+{
+  "name": "@tretuna/eslint-config",
+  "version": "0.0.1",
+  "description": "Eslint configuration for TreTuna's JavaScript applications",
+  "main": "index.js",
+  "author": "Tre Ammatuna",
+  "homepage": "https://github.com/TreTuna/eslint-config.git#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TreTuna/eslint-config.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "style guide",
+    "lint",
+    "airbnb",
+    "es6",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018",
+    "react",
+    "jsx"
+  ],
+  "scripts": {
+    "cz": "git-cz",
+    "fix:all": "run-s fix:js 'prettier --write'",
+    "fix:js": "yarn lint:js --fix",
+    "lint:all": "run-s lint:js lint:css",
+    "lint:js": "eslint --cache \"**/**.js\"",
+    "prettier": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
+    "semantic-release": "semantic-release"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.{js,jsx,json,yml,yaml,css,less,scss,ts,tsx,md,graphql,mdx}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "babel-eslint": "^10.0.3",
+    "confusing-browser-globals": "^1.0.9",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-jest-dom": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-testing-library": "^2.2.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "3.1.0",
+    "husky": "^4.2.2",
+    "lint-staged": "^10.0.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "semantic-release": "^17.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/TreTuna/eslint-config/issues"
+  }
+}
