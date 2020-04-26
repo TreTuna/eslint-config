@@ -1,6 +1,7 @@
 # @TreTuna/eslint-config
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+![Release](https://github.com/TreTuna/eslint-config/workflows/Release/badge.svg)
 
 ESLint configuration for TreTuna's JavaScript applications.
 
